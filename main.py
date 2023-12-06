@@ -42,7 +42,9 @@ app.layout = html.Div([
 def update_graph(selected_country):
     filtered_df = df[df['Country'] == selected_country]
     fig = px.line(filtered_df, x='Year', y='Population', title=f'Population Trend for {selected_country}')
+    fig.update_xaxes(categoryorder='category ascending')  # Set x-axis to display in ascending order
     return fig
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)
