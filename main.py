@@ -57,7 +57,10 @@ def update_graph(selected_country):
 )
 def update_histogram(selected_country):
     filtered_df = df[df['Country'] == selected_country]
-    fig = px.histogram(filtered_df, x='Population', title=f'Population Distribution for {selected_country}', cumulative=True)
+    
+    # Create histogram with years on x-axis and population on y-axis
+    fig = px.histogram(filtered_df, x='Year', y='Population', title=f'Population Distribution for {selected_country}')
+    fig.update_xaxes(categoryorder='category ascending')
     return fig
 
 if __name__ == '__main__':
