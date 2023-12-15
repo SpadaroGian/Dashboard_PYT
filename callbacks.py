@@ -6,12 +6,13 @@ def update_graph(df, selected_countries):
     filtered_df = df[df['Country'].isin(selected_countries)]
     fig = px.line(filtered_df, x='Year', y='Population', color='Country',
                   title='Population Trends for Selected Countries')
+    fig.update_xaxes(categoryorder='category ascending') 
     return fig
 
 def update_histogram(df, selected_countries):
     filtered_df = df[df['Country'].isin(selected_countries)]
-    fig = px.histogram(filtered_df, x='Population', color='Country',
-                       title='Population Distribution for Selected Countries')
+    fig = px.histogram(filtered_df, x='Year', y='Population', title=f'Population Distribution for {selected_countries}')
+    fig.update_xaxes(categoryorder='category ascending')
     return fig
 
 def update_map(df, selected_year, selected_countries):
