@@ -29,7 +29,7 @@ def update_map(df, selected_year, selected_countries):
                 locationmode='country names',
                 colorscale='Viridis',
                 marker_line_color='white',
-                name=country
+                showscale=False, 
             ))
 
     fig.update_layout(

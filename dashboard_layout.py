@@ -7,7 +7,7 @@ def create_layout(df):
             dcc.Dropdown(
                 id='country-dropdown',
                 options=[{'label': country, 'value': country} for country in df['Country'].unique()],
-                value=['Afghanistan'],  # Set default selected countries here
+                value=['France'],  # Set default selected countries here
                 multi=True  # Allow multiple selection
             ),
             dcc.Graph(id='population-graph')
