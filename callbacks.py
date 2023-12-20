@@ -1,6 +1,8 @@
-from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output, State
 import plotly.express as px
 import plotly.graph_objs as go
+import random  
+from dash import no_update
 
 def update_graph(df, selected_countries):
     filtered_df = df[df['Country'].isin(selected_countries)]
@@ -44,6 +46,21 @@ def update_map(df, selected_year, selected_countries):
     return fig
 
 def register_callbacks(app, df):
+    @app.callback(
+        Output('country-dropdown', 'value'),
+        Input('interval-component', 'n_intervals'),
+        State('manual-selection-flag', 'children')
+    )
+    def update_country_dropdown(n, manual_flag):
+        if manual_flag == 'manual':
+            # If manual selection was made, don't change the dropdown value
+            return no_update
+
+        selected_countries = df['Country'].unique().tolist()
+        # Select only 5 random countries
+        random_countries = random.sample(selected_countries, k=min(5, len(selected_countries)))
+        return random_countries
+
     @app.callback(
         Output('population-graph', 'figure'),
         Input('country-dropdown', 'value')
