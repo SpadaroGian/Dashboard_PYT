@@ -2,34 +2,32 @@ from dash.dependencies import Input, Output
 import plotly.express as px
 import plotly.graph_objs as go
 
-# Update the graph style for line plot
-def update_graph(df, selected_countries):
-    filtered_df = df[df['Country'].isin(selected_countries)]
+
+def update_graph(df_population, selected_countries):
+    filtered_df = df_population[df_population['Country'].isin(selected_countries)]
     fig = px.line(filtered_df, x='Year', y='Population', color='Country',
                   title='Population for Selected Countries')
     fig.update_xaxes(categoryorder='category ascending')
     fig.update_layout(
-        plot_bgcolor='#E6E6FA',  # Background color
-        paper_bgcolor='#E6E6FA',  # Background color
-        font=dict(color='#008080')  # Text color
+        plot_bgcolor='#E6E6FA',  
+        paper_bgcolor='#E6E6FA', 
+        font=dict(color='#008080')  
     )
     return fig
 
-# Update the histogram style
-def update_histogram(df, selected_countries):
-    filtered_df = df[df['Country'].isin(selected_countries)]
+def update_histogram(df_population, selected_countries):
+    filtered_df = df_population[df_population['Country'].isin(selected_countries)]
     fig = px.histogram(filtered_df, x='Year', y='Population', title=f'The Addition of Population per country: {selected_countries}')
     fig.update_xaxes(categoryorder='category ascending')
     fig.update_layout(
-        plot_bgcolor='#E6E6FA',  # Background color
-        paper_bgcolor='#E6E6FA',  # Background color
-        font=dict(color='#008080')  # Text color
+        plot_bgcolor='#E6E6FA',  
+        paper_bgcolor='#E6E6FA',  
+        font=dict(color='#008080')  
     )
     return fig
 
-# Update the map style
-def update_map(df, selected_year, selected_countries):
-    filtered_df = df[(df['Country'].isin(selected_countries)) & (df['Year'] == selected_year)]
+def update_map(df_population, selected_year, selected_countries):
+    filtered_df = df_population[(df_population['Country'].isin(selected_countries)) & (df_population['Year'] == selected_year)]
 
     fig = go.Figure()
 
@@ -52,29 +50,45 @@ def update_map(df, selected_year, selected_countries):
             showcoastlines=False,
             projection_type='equirectangular'
         ),
-        plot_bgcolor='#E6E6FA',  # Background color
-        paper_bgcolor='#E6E6FA',  # Background color
-        font=dict(color='#008080')  # Text color
+        plot_bgcolor='#E6E6FA',  
+        paper_bgcolor='#E6E6FA',  
+        font=dict(color='#008080') 
     )
 
     return fig
 
+def update_income_graph(df_income, selected_countries):
+    filtered_df = df_income[df_income['country'].isin(selected_countries)]
+    
+    fig = px.scatter(filtered_df, x='country', y='income',
+                     title='Income for Selected Countries')
+    
+    fig.update_traces(marker=dict(symbol='square', size=20)) 
+    
+    fig.update_xaxes(categoryorder='category ascending')
+    fig.update_layout(
+        plot_bgcolor='#E6E6FA',  
+        paper_bgcolor='#E6E6FA', 
+        font=dict(color='#008080') 
+    )
+    return fig
+
 # Registering the updated callbacks
-def register_callbacks(app, df):
+def register_callbacks(app, df_population, df_income):
 
     @app.callback(
         Output('population-graph', 'figure'),
         Input('country-dropdown', 'value')
     )
     def update_graph_callback(selected_countries):
-        return update_graph(df, selected_countries)
+        return update_graph(df_population, selected_countries)
 
     @app.callback(
         Output('population-histogram', 'figure'),
         Input('country-dropdown', 'value')
     )
     def update_histogram_callback(selected_countries):
-        return update_histogram(df, selected_countries)
+        return update_histogram(df_population, selected_countries)
 
     @app.callback(
         Output('population-map', 'figure'),
@@ -82,4 +96,13 @@ def register_callbacks(app, df):
         Input('country-dropdown', 'value')
     )
     def update_map_callback(selected_year, selected_countries):
-        return update_map(df, selected_year, selected_countries)
+        return update_map(df_population, selected_year, selected_countries)
+
+    @app.callback(
+        Output('income-graph', 'figure'),
+        Input('country-dropdown', 'value')
+    )
+    def update_income_graph_callback(selected_countries):
+        return update_income_graph(df_income, selected_countries)
+
+

@@ -22,12 +22,12 @@ def fetch_data2():
     response = requests.get(url)
     data = response.json()[1]
 
-    population_data = []
+    population_data2 = []
     for entry in data:
-        population_data.append({
-            'Country': entry['name'],
-            'Year': entry['incomeLevel']['value'],
+        population_data2.append({
+            'country': entry['name'],
+            'income': entry['incomeLevel']['value'],
         })
 
-    df = pd.DataFrame(population_data)
+    df = pd.DataFrame(population_data2)
     return df
