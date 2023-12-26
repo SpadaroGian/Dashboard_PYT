@@ -16,3 +16,18 @@ def fetch_data():
 
     df = pd.DataFrame(population_data)
     return df
+
+def fetch_data2():
+    url = "https://api.worldbank.org/v2/country?per_page=297&format=json"
+    response = requests.get(url)
+    data = response.json()[1]
+
+    population_data = []
+    for entry in data:
+        population_data.append({
+            'Country': entry['name'],
+            'Year': entry['incomeLevel']['value'],
+        })
+
+    df = pd.DataFrame(population_data)
+    return df
