@@ -5,13 +5,13 @@ L'application permet aux utilisateurs de visualiser et d'explorer les données d
 
 ## Table of Contents
 
-- [User Guide](#UserGuide)
+- [User Guide](#User_Guide)
 - [Aperçu](#Aperçu)
-- [Developper Guide](#DevelopperGuide)
-- [Rapport d analyse](#Rapportdanalyse)
+- [Developper Guide](#Developper_Guide)
+- [Rapport d analyse](#Rapport_d_analyse)
 
 
-## User Guide
+## User_Guide
 
 - Ouvrez votre terminal ou votre invite de commande.
 - Utilisez la commande suivante pour cloner le dépôt : git clone <URL_du_dépôt>
@@ -63,7 +63,7 @@ Le module `callbacks.py` inclut des fonctions pour mettre à jour différents gr
 
 Les callbacks sont liés à des éléments d'interface utilisateur spécifiques (par exemple, les menus déroulants) dans l'application Dash pour mettre à jour dynamiquement les visualisations en fonction des entrées de l'utilisateur.
 
-## Rapport d analyse :
+## Rapport_d_analyse :
 
 Exploitation des données dynamiques pour élaborer une analyse sur la corrélation entre la population et le revenu dans divers pays.
 
