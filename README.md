@@ -5,10 +5,10 @@ L'application permet aux utilisateurs de visualiser et d'explorer les données d
 
 ## Table of Contents
 
-- [User Guide](#User Guide)
+- [User Guide](#UserGuide)
 - [Aperçu](#Aperçu)
-- [Developper Guide](#Developper Guide)
-- [Rapport d analyse](#Rapport d analyse)
+- [Developper Guide](#DevelopperGuide)
+- [Rapport d analyse](#Rapportdanalyse)
 
 
 ## User Guide
