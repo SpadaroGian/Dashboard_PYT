@@ -5,13 +5,13 @@ L'application permet aux utilisateurs de visualiser et d'explorer les données d
 
 ## Table of Contents
 
-- [User Guide](#User_Guide)
+- [User Guide](#User-Guide)
 - [Aperçu](#Aperçu)
-- [Developper Guide](#Developper_Guide)
-- [Rapport d analyse](#Rapport_d_analyse)
+- [Developper Guide](#Developper-Guide)
+- [Rapport d analyse](#Rapport-d-analyse)
 
 
-## User_Guide
+## User Guide
 
 - Ouvrez votre terminal ou votre invite de commande.
 - Utilisez la commande suivante pour cloner le dépôt : git clone <URL_du_dépôt>
@@ -63,17 +63,20 @@ Le module `callbacks.py` inclut des fonctions pour mettre à jour différents gr
 
 Les callbacks sont liés à des éléments d'interface utilisateur spécifiques (par exemple, les menus déroulants) dans l'application Dash pour mettre à jour dynamiquement les visualisations en fonction des entrées de l'utilisateur.
 
-## Rapport_d_analyse :
+## Rapport d analyse :
 
-Exploitation des données dynamiques pour élaborer une analyse sur la corrélation entre la population et le revenu dans divers pays.
+Pour nous permettre d’exploiter et d’analyser ces données dynamiques, nous avons utilisé différents graphiques : 
 
-Parmi les pays sélectionnés, on peut trouver la France, le Brésil et le Burkina Faso. Nous avons choisi ces trois pays car ils présentent des niveaux de revenu totalement différents.
+Le premier graphique que nous avons utilisé représente l’évolution de la population des différents pays sélectionnés entre 1960 et 2022. 
+Le deuxième graphique est un histogramme qui calcule la somme de population des pays sélectionnés. 
+On retrouve en bas à gauche une carte du monde qui colorie les pays sélectionnés pour pouvoir les situer.
+En bas à droite, nous pouvons voir un graphique qui permet de comparer les revenus moyens de ces mêmes pays. 
 
-En France, avec une population relativement stable, l'accent pourrait être mis sur la répartition des revenus. Le niveau moyen/élevé de revenu indique une certaine stabilité économique et peut refléter des politiques sociales solides.
+On remarque de manière générale une relation entre la population et le revenu moyen : de manière générale, la croissance de la population est plus élevée dans les pays à revenu moyen faible. Un exemple est le Burkina Faso, où la population croît rapidement et où le revenu est plus faible. Une population en croissance avec des revenus généralement inférieurs pourrait souligner les défis économiques et sociaux auxquels le pays est confronté. Cela peut indiquer des besoins accrus en matière d'éducation, d'emploi et de services sociaux pour soutenir une population en expansion.
 
-Vieillissement de la population et impact sur l'économie : Bien que nos données ne couvrent pas directement le vieillissement démographique, nous soulignerons comment cela pourrait influer sur les modèles de consommation, les dépenses de santé et les retraites, impactant potentiellement la croissance économique à long terme.
+D’autre pays, comme une bonne partie des pays européens dont la France, ont une population beaucoup plus stable sur cette période. On remarque que ces pays-là ont souvent un revenu moyen plus élevé.
 
-Au Burkina Faso, la population est en croissance, le revenu est plus faible : Une population en croissance avec des revenus généralement inférieurs pourrait souligner les défis économiques et sociaux auxquels le pays est confronté. Cela peut indiquer des besoins accrus en matière d'éducation, d'emploi et de services sociaux pour soutenir une population en expansion.
+Nos graphiques permettent aussi d’observer des faits divers, comme par exemple le fait que l’Inde est le pays le plus peuplé du monde depuis 2022, ou encore que la population totale des BRICS est d'environ 3,25 milliards.
 
 Relations générales entre la population et l'économie :
 
@@ -81,3 +84,4 @@ Impact sur la consommation et la production : Dans tous les pays, une population
 
 Investissement dans le capital humain : Les données sur la population et le revenu pourraient souligner l'importance des investissements dans le capital humain (éducation, santé, formation) pour favoriser une économie plus productive et inclusive.
 
+Vieillissement de la population et impact sur l'économie : Bien que nos données ne couvrent pas directement le vieillissement démographique, nous soulignerons comment cela pourrait influer sur les modèles de consommation, les dépenses de santé et les retraites, impactant potentiellement la croissance économique à long terme.
