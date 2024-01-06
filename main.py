@@ -4,6 +4,14 @@ from callbacks import register_callbacks
 from data_fetch import fetch_data
 from data_fetch import fetch_data2
 
+"""
+Point d'entrée principal de l'application Dash.
+
+Ce script configure l'application Dash pour afficher des données de population et de revenu,
+en utilisant des fonctions pour récupérer les données, créer la mise en page et enregistrer les callbacks.
+
+"""
+
 app = dash.Dash(__name__)
 
 # Fetching population data

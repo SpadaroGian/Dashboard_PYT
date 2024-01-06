@@ -1,8 +1,20 @@
 from dash import html, dcc
 
 def create_layout(df_population):
+
+    """
+    Crée la mise en page de l'application Dash pour afficher les graphiques de population et de revenu.
+
+    Args:
+    df_population (pandas.DataFrame): Le DataFrame contenant les données de population.
+
+    Returns:
+    dash.html.Div: La mise en page de l'application.
+    
+    """
+
     layout = html.Div([
-        html.H1("A Look At the World's Population", style={'color': '#008080'}),  
+        html.H1("A Look at the World's Population and Their Income", style={'color': '#008080'}),  
         html.Div([
             dcc.Dropdown(
                 id='country-dropdown',

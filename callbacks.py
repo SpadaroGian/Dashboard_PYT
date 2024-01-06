@@ -4,6 +4,19 @@ import plotly.graph_objs as go
 
 
 def update_graph(df_population, selected_countries):
+     
+    """
+    Met à jour le graphique de lignes représentant la population des pays sélectionnés.
+
+    Args:
+    df_population (DataFrame): Le DataFrame contenant les données de population.
+    selected_countries (list): Liste des pays sélectionnés.
+
+    Returns:
+    plotly.graph_objs.Figure: Le graphique mis à jour.
+
+    """
+
     filtered_df = df_population[df_population['Country'].isin(selected_countries)]
     fig = px.line(filtered_df, x='Year', y='Population', color='Country',
                   title='Population for Selected Countries')
@@ -16,6 +29,19 @@ def update_graph(df_population, selected_countries):
     return fig
 
 def update_histogram(df_population, selected_countries):
+
+    """
+    Met à jour l'histogramme représentant l'addition de la population par pays pour les pays sélectionnés.
+
+    Args:
+    df_population (pandas.DataFrame): Le DataFrame contenant les données de population.
+    selected_countries (list): Liste des pays sélectionnés.
+
+    Returns:
+    plotly.graph_objs.Figure: L'histogramme mis à jour.
+
+    """
+
     filtered_df = df_population[df_population['Country'].isin(selected_countries)]
     fig = px.histogram(filtered_df, x='Year', y='Population', title=f'The Addition of Population per country: {selected_countries}')
     fig.update_xaxes(categoryorder='category ascending')
@@ -27,6 +53,20 @@ def update_histogram(df_population, selected_countries):
     return fig
 
 def update_map(df_population, selected_year, selected_countries):
+
+    """
+    Met à jour la carte géographique montrant la population pour une année donnée dans les pays sélectionnés.
+
+    Args:
+    df_population (pandas.DataFrame): Le DataFrame contenant les données de population.
+    selected_year (int): L'année sélectionnée.
+    selected_countries (list): Liste des pays sélectionnés.
+
+    Returns:
+    plotly.graph_objs.Figure: La carte géographique mise à jour.
+
+    """
+
     filtered_df = df_population[(df_population['Country'].isin(selected_countries)) & (df_population['Year'] == selected_year)]
 
     fig = go.Figure()
@@ -58,6 +98,19 @@ def update_map(df_population, selected_year, selected_countries):
     return fig
 
 def update_income_graph(df_income, selected_countries):
+
+    """
+    Met à jour le graphique de dispersion représentant le revenu des pays sélectionnés.
+
+    Args:
+    df_income (pandas.DataFrame): Le DataFrame contenant les données de revenu.
+    selected_countries (list): Liste des pays sélectionnés.
+
+    Returns:
+    plotly.graph_objs.Figure: Le graphique de revenu mis à jour.
+    
+    """
+
     filtered_df = df_income[df_income['country'].isin(selected_countries)]
     
     fig = px.scatter(filtered_df, x='country', y='income',
@@ -73,8 +126,17 @@ def update_income_graph(df_income, selected_countries):
     )
     return fig
 
-# Registering the updated callbacks
 def register_callbacks(app, df_population, df_income):
+
+    """
+    Enregistre les callbacks pour mettre à jour les différents graphiques en fonction des sélections.
+
+    Args:
+    app: Instance de l'application Dash.
+    df_population (pandas.DataFrame): Le DataFrame contenant les données de population.
+    df_income (pandas.DataFrame): Le DataFrame contenant les données de revenu.
+
+    """
 
     @app.callback(
         Output('population-graph', 'figure'),
