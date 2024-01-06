@@ -30,7 +30,7 @@ L'application se compose de plusieurs fichiers :
 - **`dashboard_layout.py`**: Désigne la mise en page. Cela inclut la manière dont les différents éléments, graphiques, et informations sont organisés et présentés sur notre application.
 - **`callbacks.py`**: Définit des fonctions utilisées pour mettre à jour les graphiques interactifs dans notre application.
 
-## Developper Guide :
+## Developper Guide
 
 ### `main.py`
 
@@ -63,7 +63,7 @@ Le module `callbacks.py` inclut des fonctions pour mettre à jour différents gr
 
 Les callbacks sont liés à des éléments d'interface utilisateur spécifiques (par exemple, les menus déroulants) dans l'application Dash pour mettre à jour dynamiquement les visualisations en fonction des entrées de l'utilisateur.
 
-## Rapport d analyse :
+## Rapport d analyse
 
 Pour nous permettre d’exploiter et d’analyser ces données dynamiques, nous avons utilisé différents graphiques : 
 
