@@ -69,7 +69,7 @@ Pour nous permettre d’exploiter et d’analyser ces données dynamiques, nous 
 
 Le premier graphique que nous avons utilisé représente l’évolution de la population des différents pays sélectionnés entre 1960 et 2022. 
 Le deuxième graphique est un histogramme qui calcule la somme de population des pays sélectionnés. 
-On retrouve en bas à gauche une carte du monde qui colorie les pays sélectionnés pour pouvoir les situer.
+On retrouve en bas à gauche une carte du monde qui colorie les pays sélectionnés pour pouvoir les situer. On peut directement voir la population pour la date sélectionnée apparaître en mettant le curseur sur chacun des pays.
 En bas à droite, nous pouvons voir un graphique qui permet de comparer les revenus moyens de ces mêmes pays. 
 
 On remarque de manière générale une relation entre la population et le revenu moyen : de manière générale, la croissance de la population est plus élevée dans les pays à revenu moyen faible. Un exemple est le Burkina Faso, où la population croît rapidement et où le revenu est plus faible. Une population en croissance avec des revenus généralement inférieurs pourrait souligner les défis économiques et sociaux auxquels le pays est confronté. Cela peut indiquer des besoins accrus en matière d'éducation, d'emploi et de services sociaux pour soutenir une population en expansion.
